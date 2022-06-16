@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const {generateMarkdown} = require("./generateMarkdown");
+const {generateMarkdown, renderLicenseBadge, renderLicenseLink, renderLicenseSection} = require("./generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -43,29 +43,34 @@ const questions = [
     {
         type: "input",
         name: "email",
-        message: "Please enter your email address. ",
-        validate(input){
-            // googled this one...
-            if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(input)){
-                return true;
-            } 
-
-            throw Error("Please write a valid email address");
-        }
-    },
+        message: "Please enter your email address. "
+    }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    const badge = renderLicenseBadge(data.license);
+    const licenseLink = renderLicenseLink(data.license);
+    const licenseSection = renderLicenseSection(data.license);
     const formattedData = generateMarkdown(data);
-    fs.writeFile(`./${fileName}`, formattedData)
-}
+    fs.writeFile(fileName, formattedData, (err)=>{
+        if (err){
+            console.log(err);
+        }
+    });
+    fs.appendFile(fileName, licenseSection, (err)=>{
+        if(err){console.log(err)}});
+    fs.appendFile(fileName, licenseLink, (err)=>{
+        if(err){console.log(err)}});
+    fs.appendFile(fileName, badge, (err)=>{
+        if(err){console.log(err)}});
+    }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then((answers)=> {
-        writeToFile("README.md", answers)
+        writeToFile("README_text.md", answers)
     }) 
 }
 
