@@ -2,9 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT"){
-    return "\n![](https://img.shields.io/badge/license-MIT-green)";
+    return "![](https://img.shields.io/badge/license-MIT-green)";
   } else if (license === "Apache") {
-    return "\n![](https://img.shields.io/badge/license-Apache-green)";
+    return "![](https://img.shields.io/badge/license-Apache-orange)";
+  } else if (license === "GNU 3.0") {
+    return "![](https://img.shields.io/badge/license-GNU GPLv.3-blue)";
+  } else if (license === "ISC") {
+    return "![](https://img.shields.io/badge/license-ISC-red)";
   } else {
     return "";
   }
@@ -14,10 +18,15 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "Apache"){
-    return "\n[Apache License](https://www.apache.org/licenses/LICENSE-2.0.txt)"
+    return "[Apache License](https://choosealicense.com/licenses/apache-2.0/)"
   } else if (license === "MIT"){
-    return "\n[MIT License](./mit_license.txt)";
-  } else {
+    return "[MIT License](https://choosealicense.com/licenses/mit/)";
+  } else if (license === "GNU 3.0"){
+    return "[GNU License](https://choosealicense.com/licenses/gpl-3.0/)";
+  } else if (license === "ISC"){
+    return "[ISC License](https://choosealicense.com/licenses/isc/)";
+  } 
+  else {
     return "";
   }
 }
@@ -25,9 +34,9 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license){return `\n## License
-
-  This project is licensed under the ${license} License - see the LICENSE.md file for details`
+  if (license){return `
+  This project is licensed under the ${license} License - click the link to read the license.
+  `
 } else {
   return "";
 }
@@ -38,10 +47,40 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log(data);
-  return `# ${data.title}\n\n## Description\n\n${data.description}
-  \n## Installation\n\n${data.installation}\n\n## Usage\n\n> ${data.usage}\n
-  ## Contributions\n\n${data.contributions}\n\n## Contact\n\n${data.contact}
- \n${data.email}\n\n`;
+  return `
+  # ${data.title}
+
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Contributions](#Contributions)
+  - [Contact](#Contact)
+  - [License](#License)
+
+  ## Description
+
+  ${data.description}
+
+  ## Installation
+  
+  ${data.installation}
+  
+  ## Usage
+
+  > ${data.usage}
+
+  ## Contributions
+  
+  ${data.contributions}
+  
+  ## Contact
+  
+  ${data.contact}
+
+  ${data.email}
+
+  ## License
+ `;
 }
 
 module.exports ={
