@@ -2,13 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT"){
-    return "![](https://img.shields.io/badge/license-MIT-green)";
+    return "\n ![MIT](https://img.shields.io/badge/license-MIT-green)";
   } else if (license === "Apache") {
-    return "![](https://img.shields.io/badge/license-Apache-orange)";
+    return "\n ![Apache](https://img.shields.io/badge/license-Apache-orange)";
   } else if (license === "GNU 3.0") {
-    return "![](https://img.shields.io/badge/license-GNU GPLv.3-blue)";
+    return "\n ![GNU GPLv. 3](https://img.shields.io/badge/license-GNU-blue)";
   } else if (license === "ISC") {
-    return "![](https://img.shields.io/badge/license-ISC-red)";
+    return "\n ![ISC](https://img.shields.io/badge/license-ISC-red)";
   } else {
     return "";
   }
@@ -47,24 +47,24 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log(data);
-  return `
-  # ${data.title}
+  return `# ${data.title}
 
-  - [Description](#Description)
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [Contributions](#Contributions)
-  - [Contact](#Contact)
-  - [License](#License)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributions](#contributions)
+  - [Contact](#contact)
+  - [Tests](#tests)
+  - [License](#license)
 
   ## Description
 
   ${data.description}
 
   ## Installation
-  
+  '''
   ${data.installation}
-  
+  '''
   ## Usage
 
   > ${data.usage}
@@ -78,6 +78,10 @@ function generateMarkdown(data) {
   ${data.contact}
 
   ${data.email}
+
+  ## Tests
+
+  ${data.tests}
 
   ## License
  `;

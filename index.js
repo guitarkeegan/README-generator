@@ -26,8 +26,13 @@ const questions = [
     },
     {
         type: "input",
+        name: "tests",
+        message: "How can they run the tests? "
+    },
+    {
+        type: "input",
         name: "contributions",
-        message: "How can others contribute to this project? "
+        message: "Who contributed to this project and how can others contribute?  "
     },
     {
         type: "list",
