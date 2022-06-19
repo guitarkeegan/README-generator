@@ -2,13 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT"){
-    return "\n ![MIT](https://img.shields.io/badge/license-MIT-green)";
+    return "![MIT](https://img.shields.io/badge/license-MIT-green)";
   } else if (license === "Apache") {
-    return "\n ![Apache](https://img.shields.io/badge/license-Apache-orange)";
+    return "![Apache](https://img.shields.io/badge/license-Apache-orange)";
   } else if (license === "GNU 3.0") {
-    return "\n ![GNU GPLv. 3](https://img.shields.io/badge/license-GNU-blue)";
+    return "![GNU GPLv. 3](https://img.shields.io/badge/license-GNU-blue)";
   } else if (license === "ISC") {
-    return "\n ![ISC](https://img.shields.io/badge/license-ISC-red)";
+    return "![ISC](https://img.shields.io/badge/license-ISC-red)";
   } else {
     return "";
   }
@@ -35,7 +35,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license){return `
-  This project is licensed under the ${license} License - click the link to read the license.
+  This project is licensed under the ${renderLicenseLink(license)} - click the link to read the license.
   `
 } else {
   return "";
@@ -47,24 +47,24 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log(data);
-  return `# ${data.title}
+  return `# ${data.title}  ${renderLicenseBadge(data.license)}
 
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributions](#contributions)
-  - [Contact](#contact)
   - [Tests](#tests)
+  - [Questions](#questions)
   - [License](#license)
 
   ## Description
-
+ 
   ${data.description}
 
   ## Installation
-  '''
+
   ${data.installation}
-  '''
+
   ## Usage
 
   > ${data.usage}
@@ -72,18 +72,20 @@ function generateMarkdown(data) {
   ## Contributions
   
   ${data.contributions}
-  
-  ## Contact
-  
-  ${data.contact}
-
-  ${data.email}
 
   ## Tests
 
   ${data.tests}
 
+  ## Questions
+
+  [My Github profile](https://github.com/${data.contact})
+
+  Send me and email [here](mailto:${data.email}) to contact me directly.
+
   ## License
+
+  ${renderLicenseSection(data.license)}
  `;
 }
 

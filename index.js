@@ -63,14 +63,7 @@ function writeToFile(fileName, data) {
             console.log(err);
         }
     });
-    fs.appendFile(fileName, licenseSection, (err)=>{
-        if(err){console.log(err)}});
-    fs.appendFile(fileName, licenseLink, (err)=>{
-        if(err){console.log(err)}});
-    fs.appendFile(fileName, badge, (err)=>{
-        if(err){console.log(err)}});
-    }
-
+}
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
