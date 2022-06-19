@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// return a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT"){
@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
+// return the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "Apache"){
@@ -31,10 +31,10 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// return the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license){return `
+  if (license !== "none"){return `## License
   This project is licensed under the ${renderLicenseLink(license)} - click the link to read the license.
   `
 } else {
@@ -44,7 +44,7 @@ function renderLicenseSection(license) {
 
 }
 
-// TODO: Create a function to generate markdown for README
+// generate markdown for README
 function generateMarkdown(data) {
   console.log(data);
   return `# ${data.title}  ${renderLicenseBadge(data.license)}
@@ -55,7 +55,7 @@ function generateMarkdown(data) {
   - [Contributions](#contributions)
   - [Tests](#tests)
   - [Questions](#questions)
-  - [License](#license)
+  - [License?](#license)
 
   ## Description
  
@@ -82,8 +82,6 @@ function generateMarkdown(data) {
   [My Github profile](https://github.com/${data.contact})
 
   Send me and email [here](mailto:${data.email}) to contact me directly.
-
-  ## License
 
   ${renderLicenseSection(data.license)}
  `;

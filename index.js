@@ -38,7 +38,7 @@ const questions = [
         type: "list",
         name: "license",
         message: "Which license would you like to use? ",
-        choices: ["MIT", "Apache", "GNU 3.0", "ISC"]
+        choices: ["MIT", "Apache", "GNU 3.0", "ISC", "none"]
     },
     {
         type: "input",
@@ -68,7 +68,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((answers)=> {
-        writeToFile("README_text.md", answers)
+        writeToFile("README.md", answers)
     }) 
 }
 
