@@ -1,4 +1,4 @@
-# Readme-Generator  ![MIT](https://img.shields.io/badge/license-MIT-green)
+# README-Generator  ![MIT](https://img.shields.io/badge/license-MIT-green)
 
   - [Description](#description)
   - [Installation](#installation)
@@ -7,6 +7,7 @@
   - [Tests](#tests)
   - [Questions](#questions)
   - [License?](#license)
+  - [Demo](#demo)
 
   ## Description
  
@@ -36,5 +37,11 @@
 
   ## License
   This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - click the link to read the license.
+
+  ## Demo
+
+  [Walkthrough of how it works](https://drive.google.com/file/d/1_jbFloUFTB2IcthXYxrFyHzfvcR3nPyr/view?usp=sharing)
+
+  ![Screenshot](./readme-gen.gif)
   
  
