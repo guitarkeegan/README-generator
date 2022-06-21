@@ -1,4 +1,4 @@
-# My New Project  ![MIT](https://img.shields.io/badge/license-MIT-green)
+# Readme-Generator  ![MIT](https://img.shields.io/badge/license-MIT-green)
 
   - [Description](#description)
   - [Installation](#installation)
@@ -10,23 +10,23 @@
 
   ## Description
  
-  This project will be great, because if it can, it can!
+  A CLI program that will take the user through a series of prompts and then fill the responces into a README.md file.
 
   ## Installation
 
-  Clone the repo and run ''' npm install ''' in your terminal
+  run: npm install in your terminal to download the required dependencies.
 
   ## Usage
 
-  > It will make the world a better place.
+  > A quick and easy way to generate a README.md file for your project.
 
   ## Contributions
   
-  I am the sole author. If you'd like to contribute to the project, contact me through the email below
+  I am the author. Please email me if you'd like to contribute.
 
   ## Tests
 
-  The can checkout the tests folder and run ''' node tests.js '''
+  npm run test
 
   ## Questions
 
