@@ -40,9 +40,7 @@
 
   ## Demo
 
-  [Walkthrough of how it works](https://drive.google.com/file/d/1_jbFloUFTB2IcthXYxrFyHzfvcR3nPyr/view?usp=sharing)
-
-  [Try this if the above link isn't working](https://www.loom.com/share/37160c1e3ba741c4af25be12d1567c97)
+  [Walkthrough of how it works](https://www.loom.com/share/37160c1e3ba741c4af25be12d1567c97)
 
   ![Screenshot](./readme-gen.gif)
   
