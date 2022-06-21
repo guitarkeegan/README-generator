@@ -42,6 +42,8 @@
 
   [Walkthrough of how it works](https://drive.google.com/file/d/1_jbFloUFTB2IcthXYxrFyHzfvcR3nPyr/view?usp=sharing)
 
+  [Try this if the above link isn't working](https://youtu.be/1zcG30WeL8I)
+
   ![Screenshot](./readme-gen.gif)
   
  
